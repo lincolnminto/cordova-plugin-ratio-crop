@@ -56,7 +56,7 @@
          croperHeight = MIN(width, height); 
     } else {
          cropController.keepingCropAspectRatio = YES;
-         if(self.widthRatio > self.heightRatio) {
+         if(self.widthRatio == self.heightRatio) {
              croperWidth = width;
              croperHeight = width * self.heightRatio / self.widthRatio;
          } else {
