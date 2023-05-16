@@ -45,28 +45,11 @@
     PECropViewController *cropController = [[PECropViewController alloc] init];
     cropController.delegate = self;
     cropController.image = image;
-     CGFloat width = self.targetWidth > -1 ? (CGFloat)self.targetWidth : image.size.width;
-     CGFloat height = self.targetHeight > -1 ? (CGFloat)self.targetHeight : image.size.height;
-     CGFloat croperWidth;
-     CGFloat croperHeight;
-
-   if (self.widthRatio < 0 || self.heightRatio < 0){
-        cropController.keepingCropAspectRatio = NO;
-         croperWidth = MIN(width, height);
-         croperHeight = MIN(width, height); 
-    } else {
-         cropController.keepingCropAspectRatio = YES;
-         croperWidth = MIN(width, height);
-         croperHeight = MIN(width, height);
-     }
      
-      
-     cropController.toolbarHidden = YES;
-     cropController.rotationEnabled = NO;
-     cropController.imageCropRect = CGRectMake((width - croperWidth) / 2,
-                                               (height - croperHeight) / 2,
-                                               croperWidth,
-                                               croperHeight);
+    cropController.keepingCropAspectRatio = NO;
+    cropController.toolbarHidden = YES;
+    cropController.rotationEnabled = NO;
+    cropController.imageCropRect = CGRectMake(0, 50, image.size.width, image.size.height);
     
     self.callbackId = command.callbackId;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:cropController];
