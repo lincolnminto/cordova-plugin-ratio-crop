@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CropImageTheme" parent="Theme.AppCompat.Light">
+        <item name="cropImageStyle">@style/CropImageView</item>
+    </style>
+
+    <style name="CropImageView" parent="Theme.AppCompat.Light">
+        <item name="showHandles">always</item>
+        <item name="showThirds">true</item>
+    </style>
+</resources>

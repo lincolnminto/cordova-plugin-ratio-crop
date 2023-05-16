@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
-    xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-ratio-crop" version="1.2.0">
+    xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-ratio-crop" version="2.0.0">
 
     <name>RatioCrop</name>
 
@@ -13,7 +13,7 @@
         <engine name="cordova-ios" version=">=3.5.0" />
     </engines>
 
-    <js-module name="RatioCrop" src="www/RatioCrop.js">
+    <js-module name="RatioCrop" src="www/ratioCrop.js">
         <clobbers target="plugins.ratioCrop" />
     </js-module>
 
@@ -49,10 +49,15 @@
             </feature>
         </config-file>
 
+        <config-file parent="/*" target="res/values/crop-ratio-styles.xml">
+            
+        </config-file>
+
+
         <framework src="com.soundcloud.android:android-crop:1.0.0@aar" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+            <activity android:name="com.soundcloud.android.crop.CropImageActivity" android:theme="@style/CropImageTheme" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
@@ -60,6 +65,8 @@
         </config-file>
 
         <source-file src="src/android/RatioCrop.java" target-dir="src/com/peterantonyrausch/crop" />
+
+        <source-file src="src/android/crop-ratio-styles.xml" target-dir="res/values/" />
     </platform>
 
 </plugin>
